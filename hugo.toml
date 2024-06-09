@@ -1,4 +1,4 @@
-baseURL = 'https://blog.cln.dev/'
+baseURL = 'https://lombold.github.io/cln.dev/'
 languageCode = 'en-us'
 title = 'cln.dev - Tech Blog'
 theme = 'PaperMod'
