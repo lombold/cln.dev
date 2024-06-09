@@ -1,0 +1,4 @@
+baseURL = 'https://blog.cln.dev/'
+languageCode = 'en-us'
+title = 'cln.dev - Tech Blog'
+theme = 'PaperMod'
