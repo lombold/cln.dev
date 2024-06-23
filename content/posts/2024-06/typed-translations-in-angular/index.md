@@ -5,23 +5,6 @@ draft = true
 categories = ['Technology']
 +++
 
-Structure
-* TL/DR
-* Foreword (General -> Accessability -> Translations)
-* Current Problem
-    * untyped => typos
-    * incomplete / bloated translation files
-    * easy of use
-* Solution approach
-    * typed translation files
-        * JSON Schema File => high maintenance, low revenue
-        * Simple JSON Schema Validation => Simple plug-in approach
-        * Translation Files written in Typescript
-    * adoption in angular
-        * ngx-translate: override translation pipe
-    * other web frameworks?
-      react, vuejs, vite?
-
 # TL/DR
 TBD
 
@@ -41,6 +24,21 @@ The easiest way to align the expressiveness and structure of the translation fil
 
 * finally the keys are not type-safe which can introduce typos in the transalted language files or when used in the code
 
+Example
+```json {lineNos=inline tabWidth=2}
+{
+  "USED_KEY": "used key",
+  "ENUM.KEY_dog": "wrong format (. instead of _)",
+  "ENUM_KEY_cat": "cat",
+  "ENUM_KEY_mouse": "mouse",
+  "OBJECT_KEY": {
+    "USED_KEY": "This is a used key",
+    "UNUSED_KEY": "This key is not used"
+  },
+  "^'23vv.vad": "This key is in a unwanted format"
+}
+```
+
 => The introduction of a type-safe format which enforces the team guidelines and is automatically tested could be one less thing to mind about while developing software
 
 # Possible Solutions
@@ -49,10 +47,17 @@ First focus on typing / validating translation files, then integration in angula
 
 ## Typing Translation files
 ### JSON Schema File
-Downside: High maintenance of the schema  
-Upside: Validate if all translation files have the same sync
+One way to make json fiels type-safe is to validate it by a predefined schema. [JSONSchema](https://json-schema.org/specification) provides the possibilty to define the desired json's structure by custom schema definitions.
+These custom schemas then can be validated against your translation files in your pipeline or directly in your IDE.
+Intellij and VS Code both support the validation of json schemas:
+* https://www.jetbrains.com/help/idea/json.html#ws_json_schema_add_custom
+* https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings
 
-```json
+
+For example to validate the json from the top we could specify the following 
+
+
+{{< codefile file="json-schema-full.json" lang="json" >}}
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
@@ -61,9 +66,6 @@ Upside: Validate if all translation files have the same sync
       "type": "string"
     },
     "USED_KEY": {
-      "type": "string"
-    },
-    "UNUSED_KEY": {
       "type": "string"
     },
     "ENUM_KEY_dog": {
@@ -81,13 +83,9 @@ Upside: Validate if all translation files have the same sync
         "USED_KEY": {
           "type": "string"
         },
-        "UNUSED_KEY": {
-          "type": "string"
-        }
       },
       "required": [
-        "USED_KEY",
-        "UNUSED_KEY"
+        "USED_KEY"
       ],
       "additionalProperties": false
     }
@@ -98,17 +96,22 @@ Upside: Validate if all translation files have the same sync
     "ENUM_KEY_dog",
     "ENUM_KEY_cat",
     "ENUM_KEY_mouse",
-    "OBJECT_KEY"
+    "OBJECT_KEY" 
   ],
   "additionalProperties": false
 }
-```
+{{< /codefile >}}
 
-![Example of schema validation in Intellij](images/json-schema-full.png)
 
+When referencing the schema by a '$schema' key Intellij automatically validates it against the json file. If some rule fails you get syntax highlighting in the editor:
+![Example of schema validation in Intellij](images/json-schema-full.png "Example of schema validation in Intellij")
+
+These full schema validations provide a good way to ensure that all defined keys are represented in all translation files. The downside of this approach is that the schema file is yet another file to maintain plus we cannot reference the translation keys in a type-safe way. So this can only be a partial solution.
 
 ### Simple JSON Schema Validation
-```json
+JSON Schemas can be useful tough. If you agreed on a naming pattern which should be respected by all translation keys then you could write a small schema file which states this pattern written in RegEx:
+
+{{< codefile file="json-schema-simple.json" lang="json" >}}
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
@@ -116,12 +119,22 @@ Upside: Validate if all translation files have the same sync
     "pattern": "^\\$schema|([A-Za-z_]+)$"
   }
 }
-```
-![Example of schema validation in Intellij](images/json-schema-simple.png)
+{{< /codefile >}}
+
+
+As for the full schema your Intellij will validate this schema automatically:
+
+
+![Example of schema validation in Intellij](images/json-schema-simple.png "Fig. - Simple Json Validation in Intellij")
+
+Unfortunately this property name pattern does not work in VSCode atm.
+
 
 ### Translation Files written in Typescript?
+As we saw we cannot use JSON Schema to check the integrity of the translation files as well using the keys in a type-safe manner.
+
+{{< codefile file="i18n/en.ts">}}
 ```typescript
-// i18n/en.ts
 export default {
   "USED_KEY": "used key",
   "UNUSED_KEY": "unused key",
@@ -133,6 +146,12 @@ export default {
     "UNUSED_KEY": "This is an unused key"
   },
 }
+```
+{{< /codefile >}}
+
+```typescript
+// i18n/en.ts
+
 
 // i18n/de.ts
 import en from "./en";
@@ -158,7 +177,7 @@ Big plus: ensures that all transaltions files have all keys
 We have to get a 
 
 
-### Types
+### Typing
 
 ```typescript
 // translation-key.type.ts

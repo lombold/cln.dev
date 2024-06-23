@@ -1,0 +1,4 @@
+<div class="codefile">
+    <div class="filename"><small><strong>{{ .Get "file" }}</strong></small></div>
+    {{ highlight (trim .Inner "\n\r") (.Get "lang") "linenos=table" "tabSize=2" }}
+</div>

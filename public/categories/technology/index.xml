@@ -6,16 +6,23 @@
     <description>Recent content in Technology on cln.dev - Tech Blog</description>
     <generator>Hugo -- 0.127.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Jun 2024 14:10:31 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 15 Jun 2024 18:33:11 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/cln.dev/categories/technology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring Webflux</title>
+      <link>http://localhost:1313/cln.dev/posts/2024-06/spring-webflux/</link>
+      <pubDate>Sat, 15 Jun 2024 18:33:11 +0200</pubDate>
+      <guid>http://localhost:1313/cln.dev/posts/2024-06/spring-webflux/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Typed Translations in Angular</title>
       <link>http://localhost:1313/cln.dev/posts/2024-06/typed-translations-in-angular/</link>
       <pubDate>Sat, 15 Jun 2024 14:10:31 +0200</pubDate>
       <guid>http://localhost:1313/cln.dev/posts/2024-06/typed-translations-in-angular/</guid>
-      <description>Structure
-TL/DR Foreword (General -&amp;gt; Accessability -&amp;gt; Translations) Current Problem untyped =&amp;gt; typos incomplete / bloated translation files easy of use Solution approach typed translation files JSON Schema File =&amp;gt; high maintenance, low revenue Simple JSON Schema Validation =&amp;gt; Simple plug-in approach Translation Files written in Typescript adoption in angular ngx-translate: override translation pipe other web frameworks? react, vuejs, vite? TL/DR TBD
-Translations in Angular i18n is important for making the page more accessible accessability leads to easier usage and thus generates more traffic / usage this is the reason why i18n is crucial for a modern anuglar app</description>
+      <description>TL/DR TBD
+Translations in Angular i18n is important for making the page more accessible accessability leads to easier usage and thus generates more traffic / usage this is the reason why i18n is crucial for a modern anuglar app
+Translation Management sucks Translation files are jsons which do not enforce a format of the keys or the json stucture by design. Free growth of these translation files can lead to quite a mess.</description>
     </item>
   </channel>
 </rss>

@@ -2,3 +2,18 @@ baseURL = 'https://lombold.github.io/cln.dev/'
 languageCode = 'en-us'
 title = 'cln.dev - Tech Blog'
 theme = 'PaperMod'
+
+
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.parser]
+    wrapStandAloneImageWithinParagraph = false
+    [markup.goldmark.parser.attribute]
+        block = true
+
+    [markup.goldmark.renderHooks]
+      [markup.goldmark.renderHooks.image]
+        enableDefault = true
+
+
