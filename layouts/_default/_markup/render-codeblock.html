@@ -1,0 +1,7 @@
+<div class="codefile">
+    <div class="filename"><small><strong>{{ index .Attributes "file" }}</strong></small></div>
+
+    {{ $opts := merge .Options (dict "linenos" true) }}
+    {{ $result := transform.HighlightCodeBlock . $opts }}
+    {{ $result.Wrapped }}
+</div>

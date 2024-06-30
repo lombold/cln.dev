@@ -25,7 +25,7 @@ The easiest way to align the expressiveness and structure of the translation fil
 * finally the keys are not type-safe which can introduce typos in the transalted language files or when used in the code
 
 Example
-```json {lineNos=inline tabWidth=2}
+```json {file="example-translation.json"}
 {
   "USED_KEY": "used key",
   "ENUM.KEY_dog": "wrong format (. instead of _)",
@@ -57,7 +57,7 @@ Intellij and VS Code both support the validation of json schemas:
 For example to validate the json from the top we could specify the following 
 
 
-{{< codefile file="json-schema-full.json" lang="json" >}}
+```json {file="json-schema-full.json"}
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
@@ -100,7 +100,7 @@ For example to validate the json from the top we could specify the following
   ],
   "additionalProperties": false
 }
-{{< /codefile >}}
+```
 
 
 When referencing the schema by a '$schema' key Intellij automatically validates it against the json file. If some rule fails you get syntax highlighting in the editor:
@@ -111,7 +111,7 @@ These full schema validations provide a good way to ensure that all defined keys
 ### Simple JSON Schema Validation
 JSON Schemas can be useful tough. If you agreed on a naming pattern which should be respected by all translation keys then you could write a small schema file which states this pattern written in RegEx:
 
-{{< codefile file="json-schema-simple.json" lang="json" >}}
+```json {file="json-schema-simple.json"}
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
@@ -119,7 +119,7 @@ JSON Schemas can be useful tough. If you agreed on a naming pattern which should
     "pattern": "^\\$schema|([A-Za-z_]+)$"
   }
 }
-{{< /codefile >}}
+```
 
 
 As for the full schema your Intellij will validate this schema automatically:
@@ -133,8 +133,9 @@ Unfortunately this property name pattern does not work in VSCode atm.
 ### Translation Files written in Typescript?
 As we saw we cannot use JSON Schema to check the integrity of the translation files as well using the keys in a type-safe manner.
 
-{{< codefile file="i18n/en.ts">}}
-```typescript
+
+ ```typescript {file="adsf"}
+// i18n/en.ts
 export default {
   "USED_KEY": "used key",
   "UNUSED_KEY": "unused key",
@@ -146,12 +147,6 @@ export default {
     "UNUSED_KEY": "This is an unused key"
   },
 }
-```
-{{< /codefile >}}
-
-```typescript
-// i18n/en.ts
-
 
 // i18n/de.ts
 import en from "./en";
@@ -179,7 +174,7 @@ We have to get a
 
 ### Typing
 
-```typescript
+ ```typescript {file="adsf"}
 // translation-key.type.ts
 import {RecursiveKey} from "./recursive-key";
 
@@ -216,7 +211,7 @@ type RecursiveKeyOfHandleValue<TValue, Text extends string> = TValue extends unk
 
 ### Typed Pipe
 
-```typescript
+ ```typescript {file="adsf"}
 @Pipe({
     name: 'typedTranslate',
     standalone: true,
@@ -234,7 +229,7 @@ export class TypedTranslatePipe extends TranslatePipe {
 ```
 
 ### Test Component
-```typescript
+ ```typescript {file="adsf"}
 @Component({
   selector: 'app-root',
   standalone: true,

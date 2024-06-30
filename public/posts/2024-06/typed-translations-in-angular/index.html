@@ -142,18 +142,40 @@ this is the reason why i18n is crucial for a modern anuglar app</p>
 </li>
 </ul>
 <p>Example</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-json" data-lang="json"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>{
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>  <span style="color:#f92672">&#34;USED_KEY&#34;</span>: <span style="color:#e6db74">&#34;used key&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>  <span style="color:#f92672">&#34;ENUM.KEY_dog&#34;</span>: <span style="color:#e6db74">&#34;wrong format (. instead of _)&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>  <span style="color:#f92672">&#34;ENUM_KEY_cat&#34;</span>: <span style="color:#e6db74">&#34;cat&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>  <span style="color:#f92672">&#34;ENUM_KEY_mouse&#34;</span>: <span style="color:#e6db74">&#34;mouse&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>  <span style="color:#f92672">&#34;OBJECT_KEY&#34;</span>: {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#f92672">&#34;USED_KEY&#34;</span>: <span style="color:#e6db74">&#34;This is a used key&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#f92672">&#34;UNUSED_KEY&#34;</span>: <span style="color:#e6db74">&#34;This key is not used&#34;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>  },
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>  <span style="color:#f92672">&#34;^&#39;23vv.vad&#34;</span>: <span style="color:#e6db74">&#34;This key is in a unwanted format&#34;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>}
-</span></span></code></pre></div><p>=&gt; The introduction of a type-safe format which enforces the team guidelines and is automatically tested could be one less thing to mind about while developing software</p>
+<div class="codefile">
+    <div class="filename"><small><strong>example-translation.json</strong></small></div>
+
+    
+    
+    <div class="highlight" file="example-translation.json"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;USED_KEY&#34;</span>: <span style="color:#e6db74">&#34;used key&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;ENUM.KEY_dog&#34;</span>: <span style="color:#e6db74">&#34;wrong format (. instead of _)&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;ENUM_KEY_cat&#34;</span>: <span style="color:#e6db74">&#34;cat&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;ENUM_KEY_mouse&#34;</span>: <span style="color:#e6db74">&#34;mouse&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;OBJECT_KEY&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;USED_KEY&#34;</span>: <span style="color:#e6db74">&#34;This is a used key&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;UNUSED_KEY&#34;</span>: <span style="color:#e6db74">&#34;This key is not used&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;^&#39;23vv.vad&#34;</span>: <span style="color:#e6db74">&#34;This key is in a unwanted format&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div><p>=&gt; The introduction of a type-safe format which enforces the team guidelines and is automatically tested could be one less thing to mind about while developing software</p>
 <h1 id="possible-solutions">Possible Solutions<a hidden class="anchor" aria-hidden="true" href="#possible-solutions">#</a></h1>
 <p>First focus on typing / validating translation files, then integration in angular,</p>
 <h2 id="typing-translation-files">Typing Translation files<a hidden class="anchor" aria-hidden="true" href="#typing-translation-files">#</a></h2>
@@ -168,7 +190,10 @@ Intellij and VS Code both support the validation of json schemas:</p>
 <p>For example to validate the json from the top we could specify the following</p>
 <div class="codefile">
     <div class="filename"><small><strong>json-schema-full.json</strong></small></div>
-    <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+
+    
+    
+    <div class="highlight" file="json-schema-full.json"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
@@ -258,16 +283,17 @@ Intellij and VS Code both support the validation of json schemas:</p>
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
 </div>
 </div>
-</div>
-
-<p>When referencing the schema by a &lsquo;$schema&rsquo; key Intellij automatically validates it against the json file. If some rule fails you get syntax highlighting in the editor:
+</div><p>When referencing the schema by a &lsquo;$schema&rsquo; key Intellij automatically validates it against the json file. If some rule fails you get syntax highlighting in the editor:
 <img src="images/json-schema-full.png" alt="Example of schema validation in Intellij" title="Example of schema validation in Intellij"></p>
 <p>These full schema validations provide a good way to ensure that all defined keys are represented in all translation files. The downside of this approach is that the schema file is yet another file to maintain plus we cannot reference the translation keys in a type-safe way. So this can only be a partial solution.</p>
 <h3 id="simple-json-schema-validation">Simple JSON Schema Validation<a hidden class="anchor" aria-hidden="true" href="#simple-json-schema-validation">#</a></h3>
 <p>JSON Schemas can be useful tough. If you agreed on a naming pattern which should be respected by all translation keys then you could write a small schema file which states this pattern written in RegEx:</p>
 <div class="codefile">
     <div class="filename"><small><strong>json-schema-simple.json</strong></small></div>
-    <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+
+    
+    
+    <div class="highlight" file="json-schema-simple.json"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
@@ -287,9 +313,7 @@ Intellij and VS Code both support the validation of json schemas:</p>
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
 </div>
 </div>
-</div>
-
-<p>As for the full schema your Intellij will validate this schema automatically:</p>
+</div><p>As for the full schema your Intellij will validate this schema automatically:</p>
 <figure>
     <img src="images/json-schema-simple.png" alt="Example of schema validation in Intellij">
     <figcaption><small>Fig. - Simple Json Validation in Intellij</small></figcaption>
@@ -297,55 +321,126 @@ Intellij and VS Code both support the validation of json schemas:</p>
 <h3 id="translation-files-written-in-typescript">Translation Files written in Typescript?<a hidden class="anchor" aria-hidden="true" href="#translation-files-written-in-typescript">#</a></h3>
 <p>As we saw we cannot use JSON Schema to check the integrity of the translation files as well using the keys in a type-safe manner.</p>
 <div class="codefile">
-    <div class="filename"><small><strong>i18n/en.ts</strong></small></div>
-    <pre tabindex="0"><code>```typescript
-export default {
-  &#34;USED_KEY&#34;: &#34;used key&#34;,
-  &#34;UNUSED_KEY&#34;: &#34;unused key&#34;,
-  &#34;ENUM_KEY_dog&#34;: &#34;dog&#34;,
-  &#34;ENUM_KEY_cat&#34;: &#34;cat&#34;,
-  &#34;ENUM_KEY_mouse&#34;: &#34;mouse&#34;,
-  &#34;OBJECT_KEY&#34;: {
-    &#34;USED_KEY&#34;: &#34;This is a used key&#34;,
-    &#34;UNUSED_KEY&#34;: &#34;This is an unused key&#34;
-  },
-}
-```</code></pre>
-</div>
+    <div class="filename"><small><strong>adsf</strong></small></div>
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// i18n/en.ts
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+    
+    
+    <div class="highlight" file="adsf"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// i18n/en.ts
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;USED_KEY&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;used key&#34;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;UNUSED_KEY&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;unused key&#34;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;ENUM_KEY_dog&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;dog&#34;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;ENUM_KEY_cat&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;cat&#34;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;ENUM_KEY_mouse&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;mouse&#34;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;OBJECT_KEY&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;USED_KEY&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;This is a used key&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;UNUSED_KEY&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;This is an unused key&#34;</span>
+</span></span><span style="display:flex;"><span> },
+</span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// i18n/de.ts
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">en</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./en&#34;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;USED_KEY&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Das ist ein gebrauchter Schlüssel&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;UNUSED_KEY&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Das ist ein unbenutzter Schlüssel&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;ENUM_KEY_dog&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Hund&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;ENUM_KEY_cat&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Katze&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;ENUM_KEY_mouse&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Maus&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;OBJECT_KEY&#34;</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;USED_KEY&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Das ist ein gebrauchter Schlüssel&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;UNUSED_KEY&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Das ist ein unbenutzter Schlüssel&#34;</span>
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">en</span>;
-</span></span></code></pre></div><p>Big plus: ensures that all transaltions files have all keys</p>
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;USED_KEY&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Das ist ein gebrauchter Schlüssel&#34;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;UNUSED_KEY&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Das ist ein unbenutzter Schlüssel&#34;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;ENUM_KEY_dog&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Hund&#34;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;ENUM_KEY_cat&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Katze&#34;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;ENUM_KEY_mouse&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Maus&#34;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;OBJECT_KEY&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;USED_KEY&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Das ist ein gebrauchter Schlüssel&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;UNUSED_KEY&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Das ist ein unbenutzter Schlüssel&#34;</span>
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">en</span>;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div><p>Big plus: ensures that all transaltions files have all keys</p>
 <h2 id="adoption-in-angular">Adoption in Angular<a hidden class="anchor" aria-hidden="true" href="#adoption-in-angular">#</a></h2>
 <p>We have to get a</p>
 <h3 id="typing">Typing<a hidden class="anchor" aria-hidden="true" href="#typing">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// translation-key.type.ts
+<div class="codefile">
+    <div class="filename"><small><strong>adsf</strong></small></div>
+
+    
+    
+    <div class="highlight" file="adsf"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// translation-key.type.ts
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">RecursiveKey</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./recursive-key&#34;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">TranslationFile</span> <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;USED_KEY&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;ENUM_KEY_cat&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;ENUM_KEY_dog&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;ENUM_KEY_mouse&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;OBJECT_KEY&#39;</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">USED_KEY</span>: <span style="color:#66d9ef">string</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">UNUSED_KEY</span>: <span style="color:#66d9ef">string</span>;
-</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;USED_KEY&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;ENUM_KEY_cat&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;ENUM_KEY_dog&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;ENUM_KEY_mouse&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;OBJECT_KEY&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">USED_KEY</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">UNUSED_KEY</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>   }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">TranslationKey</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">RecursiveKey</span>&lt;<span style="color:#f92672">TranslationFile</span>&gt;;
@@ -353,61 +448,125 @@ export default {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// utils/recursive-key.type.ts
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">RecursiveKey</span>&lt;<span style="color:#f92672">TObj</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">object</span>&gt; <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">TKey</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">TObj</span> <span style="color:#f92672">&amp;</span> (<span style="color:#66d9ef">string</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">number</span>)]<span style="color:#f92672">:</span> <span style="color:#a6e22e">RecursiveKeyOfHandleValue</span>&lt;<span style="color:#f92672">TObj</span><span style="color:#960050;background-color:#1e0010">[</span><span style="color:#a6e22e">TKey</span><span style="color:#960050;background-color:#1e0010">],</span> <span style="color:#960050;background-color:#1e0010">`$</span>{<span style="color:#a6e22e">TKey</span>}<span style="color:#960050;background-color:#1e0010">`</span>&gt;;
+</span></span><span style="display:flex;"><span>   [<span style="color:#a6e22e">TKey</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">TObj</span> <span style="color:#f92672">&amp;</span> (<span style="color:#66d9ef">string</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">number</span>)]<span style="color:#f92672">:</span> <span style="color:#a6e22e">RecursiveKeyOfHandleValue</span>&lt;<span style="color:#f92672">TObj</span><span style="color:#960050;background-color:#1e0010">[</span><span style="color:#a6e22e">TKey</span><span style="color:#960050;background-color:#1e0010">],</span> <span style="color:#960050;background-color:#1e0010">`$</span>{<span style="color:#a6e22e">TKey</span>}<span style="color:#960050;background-color:#1e0010">`</span>&gt;;
 </span></span><span style="display:flex;"><span>}[<span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">TObj</span> <span style="color:#f92672">&amp;</span> (<span style="color:#66d9ef">string</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">number</span>)];
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">RecursiveKeyOfInner</span>&lt;<span style="color:#f92672">TObj</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">object</span>&gt; <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">TKey</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">TObj</span> <span style="color:#f92672">&amp;</span> (<span style="color:#66d9ef">string</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">number</span>)]<span style="color:#f92672">:</span> <span style="color:#a6e22e">RecursiveKeyOfHandleValue</span>&lt;<span style="color:#f92672">TObj</span><span style="color:#960050;background-color:#1e0010">[</span><span style="color:#a6e22e">TKey</span><span style="color:#960050;background-color:#1e0010">],</span> <span style="color:#960050;background-color:#1e0010">`[&#39;$</span>{<span style="color:#a6e22e">TKey</span>}<span style="color:#960050;background-color:#1e0010">&#39;]`</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">`</span><span style="color:#a6e22e">.</span><span style="color:#960050;background-color:#1e0010">$</span>{<span style="color:#a6e22e">TKey</span>}<span style="color:#960050;background-color:#1e0010">`</span>&gt;;
+</span></span><span style="display:flex;"><span>   [<span style="color:#a6e22e">TKey</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">TObj</span> <span style="color:#f92672">&amp;</span> (<span style="color:#66d9ef">string</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">number</span>)]<span style="color:#f92672">:</span> <span style="color:#a6e22e">RecursiveKeyOfHandleValue</span>&lt;<span style="color:#f92672">TObj</span><span style="color:#960050;background-color:#1e0010">[</span><span style="color:#a6e22e">TKey</span><span style="color:#960050;background-color:#1e0010">],</span> <span style="color:#960050;background-color:#1e0010">`[&#39;$</span>{<span style="color:#a6e22e">TKey</span>}<span style="color:#960050;background-color:#1e0010">&#39;]`</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">`</span><span style="color:#a6e22e">.</span><span style="color:#960050;background-color:#1e0010">$</span>{<span style="color:#a6e22e">TKey</span>}<span style="color:#960050;background-color:#1e0010">`</span>&gt;;
 </span></span><span style="display:flex;"><span>}[<span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">TObj</span> <span style="color:#f92672">&amp;</span> (<span style="color:#66d9ef">string</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">number</span>)];
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">RecursiveKeyOfHandleValue</span>&lt;<span style="color:#f92672">TValue</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">Text</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">TValue</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">unknown</span>[]
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">?</span> <span style="color:#a6e22e">Text</span>
-</span></span><span style="display:flex;"><span>    : <span style="color:#66d9ef">TValue</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">object</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">?</span> <span style="color:#a6e22e">Text</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">Text</span><span style="color:#e6db74">}${</span><span style="color:#a6e22e">RecursiveKeyOfInner</span>&lt;<span style="color:#f92672">TValue</span>&gt;<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">:</span> <span style="color:#a6e22e">Text</span>;
-</span></span></code></pre></div><h3 id="typed-pipe">Typed Pipe<a hidden class="anchor" aria-hidden="true" href="#typed-pipe">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">@Pipe</span>({
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;typedTranslate&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">standalone</span>: <span style="color:#66d9ef">true</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pure</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">?</span> <span style="color:#a6e22e">Text</span>
+</span></span><span style="display:flex;"><span>   : <span style="color:#66d9ef">TValue</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">object</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">?</span> <span style="color:#a6e22e">Text</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">Text</span><span style="color:#e6db74">}${</span><span style="color:#a6e22e">RecursiveKeyOfInner</span>&lt;<span style="color:#f92672">TValue</span>&gt;<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">:</span> <span style="color:#a6e22e">Text</span>;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div><h3 id="typed-pipe">Typed Pipe<a hidden class="anchor" aria-hidden="true" href="#typed-pipe">#</a></h3>
+<div class="codefile">
+    <div class="filename"><small><strong>adsf</strong></small></div>
+
+    
+    
+    <div class="highlight" file="adsf"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">@Pipe</span>({
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;typedTranslate&#39;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">standalone</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">pure</span>: <span style="color:#66d9ef">false</span>
 </span></span><span style="display:flex;"><span>})
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TypedTranslatePipe</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">TranslatePipe</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">translate</span>: <span style="color:#66d9ef">TranslateService</span>, <span style="color:#a6e22e">_ref</span>: <span style="color:#66d9ef">ChangeDetectorRef</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">translate</span>, <span style="color:#a6e22e">_ref</span>);
-</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">translate</span>: <span style="color:#66d9ef">TranslateService</span>, <span style="color:#a6e22e">_ref</span>: <span style="color:#66d9ef">ChangeDetectorRef</span>) {
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">translate</span>, <span style="color:#a6e22e">_ref</span>);
+</span></span><span style="display:flex;"><span>   }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">override</span> <span style="color:#a6e22e">transform</span>(<span style="color:#a6e22e">key</span>: <span style="color:#66d9ef">TranslationKey</span>, ...<span style="color:#a6e22e">args</span>: <span style="color:#66d9ef">any</span>[])<span style="color:#f92672">:</span> <span style="color:#66d9ef">any</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">transform</span>(<span style="color:#a6e22e">key</span>, ...<span style="color:#a6e22e">args</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="test-component">Test Component<a hidden class="anchor" aria-hidden="true" href="#test-component">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">@Component</span>({
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">selector</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;app-root&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">standalone</span>: <span style="color:#66d9ef">true</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">imports</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">RouterOutlet</span>, <span style="color:#a6e22e">TranslateModule</span>, <span style="color:#a6e22e">NgForOf</span>, <span style="color:#a6e22e">TypedTranslatePipe</span>],
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">template</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;h1&gt;Welcome to {{title}}!&lt;/h1&gt;
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">override</span> <span style="color:#a6e22e">transform</span>(<span style="color:#a6e22e">key</span>: <span style="color:#66d9ef">TranslationKey</span>, ...<span style="color:#a6e22e">args</span>: <span style="color:#66d9ef">any</span>[])<span style="color:#f92672">:</span> <span style="color:#66d9ef">any</span> {
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">transform</span>(<span style="color:#a6e22e">key</span>, ...<span style="color:#a6e22e">args</span>);
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div><h3 id="test-component">Test Component<a hidden class="anchor" aria-hidden="true" href="#test-component">#</a></h3>
+<div class="codefile">
+    <div class="filename"><small><strong>adsf</strong></small></div>
+
+    
+    
+    <div class="highlight" file="adsf"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">@Component</span>({
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">selector</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;app-root&#39;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">standalone</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">imports</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">RouterOutlet</span>, <span style="color:#a6e22e">TranslateModule</span>, <span style="color:#a6e22e">NgForOf</span>, <span style="color:#a6e22e">TypedTranslatePipe</span>],
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">template</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   &lt;h1&gt;Welcome to {{title}}!&lt;/h1&gt;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;p&gt;{{ &#39;USED_KEY&#39; | typedTranslate }}&lt;/p&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;ul&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;li *ngFor=&#34;let animal of animals&#34;&gt;{{ getAnimalKey(animal) | typedTranslate }}&lt;/li&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/ul&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    {{ &#39;ENUM_KEY_cat&#39; | typedTranslate }}
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;router-outlet /&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  `</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">styles</span><span style="color:#f92672">:</span> [],
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   &lt;p&gt;{{ &#39;USED_KEY&#39; | typedTranslate }}&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   &lt;ul&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     &lt;li *ngFor=&#34;let animal of animals&#34;&gt;{{ getAnimalKey(animal) | typedTranslate }}&lt;/li&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   &lt;/ul&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   {{ &#39;ENUM_KEY_cat&#39; | typedTranslate }}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   &lt;router-outlet /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> `</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">styles</span><span style="color:#f92672">:</span> [],
 </span></span><span style="display:flex;"><span>})
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppComponent</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;translation-key-finder&#39;</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// animals: Animals[] = [Animals.CAT, Animals.DOG, Animals.MOUSE];
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">animals</span>: <span style="color:#66d9ef">Animals</span>[] <span style="color:#f92672">=</span> [<span style="color:#a6e22e">Animals</span>.<span style="color:#a6e22e">CAT</span>, <span style="color:#a6e22e">Animals</span>.<span style="color:#a6e22e">MOUSE</span>];
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;translation-key-finder&#39;</span>;
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">// animals: Animals[] = [Animals.CAT, Animals.DOG, Animals.MOUSE];
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#a6e22e">animals</span>: <span style="color:#66d9ef">Animals</span>[] <span style="color:#f92672">=</span> [<span style="color:#a6e22e">Animals</span>.<span style="color:#a6e22e">CAT</span>, <span style="color:#a6e22e">Animals</span>.<span style="color:#a6e22e">MOUSE</span>];
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">getAnimalKey</span>(<span style="color:#a6e22e">animal</span>: <span style="color:#66d9ef">Animals</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">TranslationKey</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">const</span>&gt;<span style="color:#e6db74">`ENUM_KEY_</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">animal</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="other-frameworks">Other Frameworks<a hidden class="anchor" aria-hidden="true" href="#other-frameworks">#</a></h2>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">getAnimalKey</span>(<span style="color:#a6e22e">animal</span>: <span style="color:#66d9ef">Animals</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">TranslationKey</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">const</span>&gt;<span style="color:#e6db74">`ENUM_KEY_</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">animal</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div><h2 id="other-frameworks">Other Frameworks<a hidden class="anchor" aria-hidden="true" href="#other-frameworks">#</a></h2>
 <p>react, vuejs, vite?</p>
 <h1 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h1>
 <p>Simple json schema approach feels like a quick-win which is not as intrusive as writing translations in typescript</p>
