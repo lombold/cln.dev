@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on cln.dev - Tech Blog</title>
-    <link>http://localhost:1313/cln.dev/posts/</link>
-    <description>Recent content in Posts on cln.dev - Tech Blog</description>
+    <title>Accessability on cln.dev - Tech Blog</title>
+    <link>http://localhost:1313/cln.dev/categories/accessability/</link>
+    <description>Recent content in Accessability on cln.dev - Tech Blog</description>
     <generator>Hugo -- 0.127.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Jun 2024 18:33:11 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/cln.dev/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Spring Webflux</title>
-      <link>http://localhost:1313/cln.dev/posts/2024-06/spring-webflux/</link>
-      <pubDate>Sat, 15 Jun 2024 18:33:11 +0200</pubDate>
-      <guid>http://localhost:1313/cln.dev/posts/2024-06/spring-webflux/</guid>
-      <description></description>
-    </item>
+    <lastBuildDate>Sat, 15 Jun 2024 14:10:31 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/cln.dev/categories/accessability/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Typed Translations in Angular</title>
       <link>http://localhost:1313/cln.dev/posts/2024-06/typed-translations-in-angular/</link>
@@ -23,13 +16,6 @@
       <description>TL/DR TBD translation
 Why translate? A lot of web applications are exposed to a target audience which likely constists of people who speak different languages. You can make your application easier to use if you translate it&amp;rsquo;s content (e.g. buttons, navigation, links, headers, etc.).
 Maintaining translation files is a pain Translations are typically managed through json files where one or more files are created for each language you want to support (e.</description>
-    </item>
-    <item>
-      <title>Hi</title>
-      <link>http://localhost:1313/cln.dev/posts/2024-06/hi/</link>
-      <pubDate>Sun, 09 Jun 2024 17:43:27 +0200</pubDate>
-      <guid>http://localhost:1313/cln.dev/posts/2024-06/hi/</guid>
-      <description>WIP</description>
     </item>
   </channel>
 </rss>

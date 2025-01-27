@@ -15,14 +15,5 @@
       <guid>http://localhost:1313/cln.dev/posts/2024-06/spring-webflux/</guid>
       <description></description>
     </item>
-    <item>
-      <title>Typed Translations in Angular</title>
-      <link>http://localhost:1313/cln.dev/posts/2024-06/typed-translations-in-angular/</link>
-      <pubDate>Sat, 15 Jun 2024 14:10:31 +0200</pubDate>
-      <guid>http://localhost:1313/cln.dev/posts/2024-06/typed-translations-in-angular/</guid>
-      <description>TL/DR TBD
-Translations in Angular i18n is important for making the page more accessible accessability leads to easier usage and thus generates more traffic / usage this is the reason why i18n is crucial for a modern anuglar app
-Translation Management sucks Translation files are jsons which do not enforce a format of the keys or the json stucture by design. Free growth of these translation files can lead to quite a mess.</description>
-    </item>
   </channel>
 </rss>
