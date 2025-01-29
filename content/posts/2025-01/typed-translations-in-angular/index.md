@@ -1,15 +1,16 @@
 +++
 title = 'Typed Translations in Angular'
-date = 2025-01-27T19:00:00+01:00
-draft = true
+date = 2025-01-29T19:00:00+01:00
+draft = false
 version = 1
+author = 'Colin'
 categories = ['Angular', 'accessability', 'ngx-translate']
 +++
 
 
 # TL/DR
 * Quick-Win: Create a Json Schema file to validate the format of translation keys
-* Big / customer facing projects: Write translations in Typescript files and define a Type based on it. Use this type to ensure that keys in your App are actually existing.
+* Big / customer facing projects: Write translations in TypeScript files and define a Type based on it. Use this Type to ensure that keys in your App actually exist.
 
 # Why translate?
 A lot of web applications are  exposed to a target audience which likely consists of people who speak different languages. You can make your application easier to use if you translate it's content (e.g. buttons, navigation, links, headers, etc.).
@@ -136,13 +137,13 @@ Like the full schema your Intellij will validate this schema automatically:
 Unfortunately this property name pattern does not work in VSCode atm.
 
 
-### Translation files written in Typescript?
+### Translation files written in TypeScript?
 As we saw JSON Schema can be used to check the integrity of the translation files. But if we want to ensure that the keys are referenced in a type-safe manner we have to get a bit more creative.
 
-Since the source code is mainly written in Typescript and - as the name implies- one big feature of the language is to enforce a type system to our code we can use its magic to check our translation files too.
+Since the source code is mainly written in TypeScript and - as the name implies- one big feature of the language is to enforce a type system to our code we can use its magic to check our translation files too.
 
 There would be multiple ways to get this working. I've settled on the following approach:
- ```typescript {file="i18n/en.ts"}
+ ```TypeScript {file="i18n/en.ts"}
 // i18n/en.ts
 export default {
   "USED_KEY": "used key",
@@ -172,7 +173,7 @@ export default {
 } as typeof en;
 ```
 
-For each language (e.g. English and German) I created a separate Typescript file. Each translation file consists just of a default export which exports all translation of the respective language as an object. Now to get the type-checking working we let the compiler know against which type we want to check. This is done by adding `as typeof en` to the end of the German translations. 
+For each language (e.g. English and German) I created a separate TypeScript file. Each translation file consists just of a default export which exports all translation of the respective language as an object. Now to get the type-checking working we let the compiler know against which Type we want to check. This is done by adding `as typeof en` to the end of the German translations. 
 
 What I like about this setup is that it does not just check if the keys are spelled correctly. It also checks that there are no missed or additional keys. 
 
@@ -182,15 +183,15 @@ But how could you use this in your Angular project?
 ## Adoption in Angular (using ngx-translate)
 
 ### Typing
-The first step is to get our translation type actually usable. Because ngx-translate takes the refence as a dot-separated path which it is using to travers the translation object:
-```typescript {file="example.component.html"}
+The first step is to get our translation Type actually usable. Because ngx-translate takes the refence as a dot-separated path which it is using to travers the translation object:
+```TypeScript {file="example.component.html"}
 <p>{{ "USED_KEY" | translate }}</p>
 <p>{{ "OBJECT_KEY.USED_KEY" | translate }}</p>
 <p>{{ "USED_KEY" | translate }}</p>
 ```
 
-To map our existing translation file type into the desired format we have to use a small helper:
-```typescript {file="recursive-key.ts"}
+To map our existing translation file Type into the desired format we have to use a small helper:
+```TypeScript {file="recursive-key.ts"}
 export type RecursiveKeyType<TObj extends object> = {
   [TKey in keyof TObj & (string | number)]: RecursiveKeyOfHandleValue<
     TObj[TKey],
@@ -215,11 +216,11 @@ type RecursiveKeyOfHandleValue<
     : Text;
 ```
 
-Let's not go deep on this abomination of a type. Maybe another time. But what it does is quite cool. It flattens an object into a union type of its hierarchy. Each key in the hierarchy is expressed through a dot-separated string from the root of the object. So from a object that looks like this: `{foo:{bar:{tar:''}}}` the `RecursiveKey` type will produce a union type like this `'foo' | 'foo.bar' | 'foo.bar.tar'`.
+Let's not go deep on this abomination of a Type. Maybe another time. But what it does is quite cool. It flattens an object into a union Type of its hierarchy. Each key in the hierarchy is expressed through a dot-separated string from the root of the object. So from a object that looks like this: `{foo:{bar:{tar:''}}}` the `RecursiveKey` Type will produce a union Type like this `'foo' | 'foo.bar' | 'foo.bar.tar'`.
 
-Looks quite like what we're looking for, right? With this helper we can declare a new type in our application which ensures that each translation reference actually matches a translation in the translation file. This new type can simply declared like this:
+Looks quite like what we're looking for, right? With this helper we can declare a new Type in our application which ensures that each translation reference actually matches a translation in the translation file. This new Type can simply declared like this:
 
- ```typescript {file="translation-key.type.ts"}
+ ```TypeScript {file="translation-key.type.ts"}
 import { RecursiveKeyType } from "./recursive-key.type";
 import en from "../../../i18n/en";
 
@@ -227,9 +228,9 @@ export type TranslationKey = RecursiveKeyType<typeof en>;
 ```
 
 ### Typed Pipe
-Unfortunately, ngx-translate does not provide the possiblity to enable type-safe usage of translation keys out of the box. So we have to do it by ourselves. For that we create a new Pipe which extends ngx-translate's `TranslatePipe`. Then, we simply override the `transform` function to only accept keys of the TranslationKey type:
+Unfortunately, ngx-translate does not provide the possiblity to enable type-safe usage of translation keys out of the box. So we have to do it by ourselves. For that we create a new Pipe which extends ngx-translate's `TranslatePipe`. Then, we simply override the `transform` function to only accept keys of the TranslationKey Type:
 
- ```typescript {file="typed-translate.pipe.ts"}
+ ```TypeScript {file="typed-translate.pipe.ts"}
 @Pipe({
     name: 'typedTranslate',
     standalone: true,
@@ -249,26 +250,22 @@ export class TypedTranslatePipe extends TranslatePipe {
 ### Usage
 
 The custom `TypedTranslatePipe` can then be used like the regular `TranslateType`:
- ```typescript {file="app.component.ts"}
+ ```TypeScript {file="app.component.ts"}
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, TranslateModule, NgForOf, TypedTranslatePipe],
   template: `
-    <h1>Welcome to {{title}}!</h1>
-
     <p>{{ 'USED_KEY' | typedTranslate }}</p>
     <ul>
       <li *ngFor="let animal of animals">{{ getAnimalKey(animal) | typedTranslate }}</li>
     </ul>
     
     {{ 'ENUM_KEY_cat' | typedTranslate }}
-    <router-outlet />
   `,
   styles: [],
 })
 export class AppComponent {
-  title = 'translation-key-finder';
   animals: Animals[] = [Animals.CAT, Animals.MOUSE];
 
   getAnimalKey(animal: Animals): TranslationKey {
@@ -278,9 +275,10 @@ export class AppComponent {
 ```
 
 # My Conclusion
-It is crucial to settle on team guidelines to get good translation files. This is the basis to apply reasonable and automatic  checks. Then, creating a simple json schema which check the keys format feels like a quick-win. It is not as intrusive as writing translations in typescript but can lead to noticable improvements.
+To conclude, Team guidelines would be the first thing to establish in the team. With that we have the basis to apply reasonable and automatic checks. Then, creating a simple json schema which checks the key's format feels like a quick-win. It is not as intrusive as writing translations in TypeScript but can still lead to noticable improvements.
 
-If you're working on a big project with a lot of translations or you work on a customer facing application where it's important that for each used key there is a translation typing your translations could be somthing for you.
+Introducing types for translations could be beneficial, especially for projects with extensive translations or when ensuring that all keys reference a valid translation. This is particularly useful in customer-facing applications.
 
-Would you type your translations?
+Would you use TypeScript Typings for your translations? [Let me know](mailto:colin@cln.dev)</a>
+
                                                                                                       

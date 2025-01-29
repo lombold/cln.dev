@@ -13,7 +13,14 @@
       <link>http://localhost:1313/cln.dev/posts/2025-01/typed-translations-in-angular/</link>
       <pubDate>Mon, 27 Jan 2025 19:00:00 +0100</pubDate>
       <guid>http://localhost:1313/cln.dev/posts/2025-01/typed-translations-in-angular/</guid>
-      <description>TL/DR Quick-Win: Create a Json Schema file to validate the format of translation keys Big / customer facing projects: Write translations in Typescript files and define a Type based on it. Use this type to ensure that keys in your App are actually existing. Why translate? A lot of web applications are exposed to a target audience which likely consists of people who speak different languages. You can make your application easier to use if you translate it&amp;rsquo;s content (e.</description>
+      <description>TL/DR Quick-Win: Create a Json Schema file to validate the format of translation keys Big / customer facing projects: Write translations in Typescript files and define a Type based on it. Use this Type to ensure that keys in your App are actually existing. Why translate? A lot of web applications are exposed to a target audience which likely consists of people who speak different languages. You can make your application easier to use if you translate it&amp;rsquo;s content (e.</description>
+    </item>
+    <item>
+      <title>Spring Webflux</title>
+      <link>http://localhost:1313/cln.dev/posts/2025-01/spring-webflux/</link>
+      <pubDate>Sat, 15 Jun 2024 18:33:11 +0200</pubDate>
+      <guid>http://localhost:1313/cln.dev/posts/2025-01/spring-webflux/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

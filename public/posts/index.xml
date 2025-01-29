@@ -6,30 +6,21 @@
     <description>Recent content in Posts on cln.dev - Tech Blog</description>
     <generator>Hugo -- 0.127.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Jun 2024 18:33:11 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jan 2025 19:00:00 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/cln.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Spring Webflux</title>
-      <link>http://localhost:1313/cln.dev/posts/2024-06/spring-webflux/</link>
-      <pubDate>Sat, 15 Jun 2024 18:33:11 +0200</pubDate>
-      <guid>http://localhost:1313/cln.dev/posts/2024-06/spring-webflux/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Typed Translations in Angular</title>
-      <link>http://localhost:1313/cln.dev/posts/2024-06/typed-translations-in-angular/</link>
-      <pubDate>Sat, 15 Jun 2024 14:10:31 +0200</pubDate>
-      <guid>http://localhost:1313/cln.dev/posts/2024-06/typed-translations-in-angular/</guid>
-      <description>TL/DR TBD translation
-Why translate? A lot of web applications are exposed to a target audience which likely constists of people who speak different languages. You can make your application easier to use if you translate it&amp;rsquo;s content (e.g. buttons, navigation, links, headers, etc.).
-Maintaining translation files is a pain Translations are typically managed through json files where one or more files are created for each language you want to support (e.</description>
+      <link>http://localhost:1313/cln.dev/posts/2025-01/typed-translations-in-angular/</link>
+      <pubDate>Mon, 27 Jan 2025 19:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/cln.dev/posts/2025-01/typed-translations-in-angular/</guid>
+      <description>TL/DR Quick-Win: Create a Json Schema file to validate the format of translation keys Big / customer facing projects: Write translations in Typescript files and define a Type based on it. Use this Type to ensure that keys in your App are actually existing. Why translate? A lot of web applications are exposed to a target audience which likely consists of people who speak different languages. You can make your application easier to use if you translate it&amp;rsquo;s content (e.</description>
     </item>
     <item>
-      <title>Hi</title>
-      <link>http://localhost:1313/cln.dev/posts/2024-06/hi/</link>
-      <pubDate>Sun, 09 Jun 2024 17:43:27 +0200</pubDate>
-      <guid>http://localhost:1313/cln.dev/posts/2024-06/hi/</guid>
-      <description>WIP</description>
+      <title>Spring Webflux</title>
+      <link>http://localhost:1313/cln.dev/posts/2025-01/spring-webflux/</link>
+      <pubDate>Sat, 15 Jun 2024 18:33:11 +0200</pubDate>
+      <guid>http://localhost:1313/cln.dev/posts/2025-01/spring-webflux/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>
