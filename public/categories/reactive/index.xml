@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/cln.dev/categories/reactive/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spring Webflux</title>
-      <link>http://localhost:1313/cln.dev/posts/2025-01/spring-webflux/</link>
+      <link>http://localhost:1313/cln.dev/posts/2025/spring-webflux/</link>
       <pubDate>Sat, 15 Jun 2024 18:33:11 +0200</pubDate>
-      <guid>http://localhost:1313/cln.dev/posts/2025-01/spring-webflux/</guid>
+      <guid>http://localhost:1313/cln.dev/posts/2025/spring-webflux/</guid>
       <description></description>
     </item>
   </channel>

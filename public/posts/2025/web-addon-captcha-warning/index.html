@@ -5,11 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Technology | cln.dev - Tech Blog</title>
+<title>Privacy concerns with reCAPTCHA V3 | cln.dev - Tech Blog</title>
 <meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/cln.dev/categories/technology/">
+<meta name="description" content="SHORT
+Captcha challenges are keeping bots from flooding the internet with generated stuff. They are tough but a lot less I guess.
+Back in 2009 Google took over reCAPTCHA and, so far, they released three versions:
+V1: The one where you help google recognising house numbers in StreetView V2: Just an &ldquo;I&rsquo;m not a robot&rdquo; checkbox. User behaviour like mouse movements are tracked in the background. V3: Invisible. reCAPTCHA is permanently calculating a score based on the user&rsquo;s behaviour.">
+<meta name="author" content="Colin">
+<link rel="canonical" href="http://localhost:1313/cln.dev/posts/2025/web-addon-captcha-warning/">
 <link crossorigin="anonymous" href="/cln.dev/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/cln.dev/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/cln.dev/favicon-16x16.png">
@@ -18,8 +21,7 @@
 <link rel="mask-icon" href="http://localhost:1313/cln.dev/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/cln.dev/categories/technology/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/cln.dev/categories/technology/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/cln.dev/posts/2025/web-addon-captcha-warning/">
 <noscript>
     <style>
         #theme-toggle,
@@ -59,7 +61,7 @@
 </noscript>
 </head>
 
-<body class="list" id="top">
+<body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -102,29 +104,40 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<header class="page-header">
-  <h1>
-    Technology
-  </h1>
-</header>
+<main class="main">
 
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Spring Webflux
-      <span class="entry-hint" title="Draft">
-        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" fill="currentColor">
-          <path
-            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
-        </svg>
-      </span>
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p></p>
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Privacy concerns with reCAPTCHA V3
+    </h1>
+    <div class="post-meta"><span title='2025-02-07 19:00:00 +0100 CET'>February 7, 2025</span>&nbsp;·&nbsp;Colin
+
+</div>
+  </header> 
+  <div class="post-content"><p><em>SHORT</em></p>
+<p>Captcha challenges are keeping bots from flooding the internet with generated stuff. They are tough but a lot less I guess.</p>
+<p>Back in 2009 Google took over reCAPTCHA and, so far, they released three versions:</p>
+<ul>
+<li>V1: The one where you help google recognising house numbers in StreetView</li>
+<li>V2: Just an &ldquo;I&rsquo;m not a robot&rdquo; checkbox. User behaviour like mouse movements are tracked in the background.</li>
+<li>V3: Invisible. reCAPTCHA is permanently calculating a score based on the user&rsquo;s behaviour. <a href="https://developers.google.com/recaptcha/docs/v3">[1]</a></li>
+</ul>
+<p>Since V3 is no more visible to the user there are a lot of concerns about privacy. Especially because some of the tracked data is send to Google. If interested I&rsquo;m recommending the reCAPTCHA Wikipedia article: <a href="https://en.wikipedia.org/wiki/ReCAPTCHA">https://en.wikipedia.org/wiki/ReCAPTCHA</a></p>
+<p>Apparently, Cloudflare was moving to hCaptcha because of this: <a href="https://blog.cloudflare.com/moving-from-recaptcha-to-hcaptcha/">https://blog.cloudflare.com/moving-from-recaptcha-to-hcaptcha/</a></p>
+<p>I&rsquo;m not against captchas, but it bothers me that I don&rsquo;t know that I&rsquo;m being tracked.</p>
+<p>To mitigate that feeling I created a small Firefox addon which adds a red border to all websites which use reCAPTCHA. Feel free to install it or fork the code:</p>
+<p>Addon: <a href="https://addons.mozilla.org/de/firefox/addon/captcha-warning/">https://addons.mozilla.org/de/firefox/addon/captcha-warning/</a></p>
+<p>Code: <a href="https://github.com/lombold/browser-addon-captcha-v3-warning">https://github.com/lombold/browser-addon-captcha-v3-warning</a></p>
+
+
   </div>
-  <footer class="entry-footer"><span title='2024-06-15 18:33:11 +0200 CEST'>June 15, 2024</span></footer>
-  <a class="entry-link" aria-label="post link to Spring Webflux" href="http://localhost:1313/cln.dev/posts/2025/spring-webflux/"></a>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
 </article>
     </main>
     
