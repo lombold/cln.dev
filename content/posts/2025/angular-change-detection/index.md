@@ -1,5 +1,5 @@
 +++
-title = 'Angula Change Detection is simple (demo application)'
+title = 'Angular Change Detection is simple (demo application)'
 date = 2025-12-06T12:00:00+01:00
 draft = false
 version = 1
